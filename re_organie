@@ -1,0 +1,14 @@
+from pathlib import Path
+
+# Create project structure
+project_root = Path("c:/Users/JulianMitchell/OneDrive - Cornwells Chemists Limited/Jasper/AI PROGAMMES/INVOICE_PROJECT")
+
+# Create directories
+(project_root / "src").mkdir(exist_ok=True)
+(project_root / "utils").mkdir(exist_ok=True)
+(project_root / "supplier_configs").mkdir(exist_ok=True)
+
+# Create __init__.py files
+(project_root / "src" / "__init__.py").touch()
+(project_root / "utils" / "__init__.py").touch()
+(project_root / "supplier_configs" / "__init__.py").touch()

@@ -1,0 +1,149 @@
+{
+    "ABBOTT": {
+        "code": "ABBOTT",
+        "name": "Abbott Laboratories Limited",
+        "sheet_identifier": "abbott",
+        "validation_markers": [
+            "ABBOTT LABORATORIES LIMITED",
+            "INVOICE"
+        ],
+        "exclusion_markers": [
+            "REMITTANCE ADVICE"
+        ],
+        "patterns": {
+            "invoice_number": "Invoice No\\.?\\s*(\\d{7})",
+            "invoice_date": "Invoice Date\\s*(\\d{2}/\\d{2}/\\d{4})",
+            "reference_number": "Account Ref No\\.\\s*(\\d+)",
+            "pre_vat_total": "Total Net Amount\\s*([\\d,]+\\.\\d{2})",
+            "total_amount": "Invoice Total\\s*([\\d,]+\\.\\d{2})"
+        },
+        "high_confidence_threshold": 95.0,
+        "review_confidence_threshold": 75.0,
+        "last_run_date": "",
+        "total_processed": 0,
+        "success_rate": 0.0
+    },
+    "AJBELL": {
+        "code": "AJBELL",
+        "name": "AJ Bell Business Solutions Limited",
+        "sheet_identifier": "bell",
+        "validation_markers": [
+            "AJ Bell",
+            "FEE INVOICE"
+        ],
+        "exclusion_markers": [
+            "REMITTANCE"
+        ],
+        "patterns": {
+            "invoice_number": "Invoice Number:\\s*(\\d{2}/\\d{2}/\\d{3})",
+            "invoice_date": "(\\d{1,2}\\s+(?:January|February|March|April|May|June|July|August|September|October|November|December)\\s+\\d{4})",
+            "reference_number": "Our Ref:\\s*(CORN\\d{4})",
+            "pre_vat_total": "Total Fee:\\s*\u00a3([\\d,]+\\.\\d{2})",
+            "total_amount": "Total Invoice:\\s*\u00a3([\\d,]+\\.\\d{2})"
+        },
+        "high_confidence_threshold": 95.0,
+        "review_confidence_threshold": 75.0,
+        "last_run_date": "",
+        "total_processed": 0,
+        "success_rate": 0.0
+    },
+    "ADEPT": {
+        "code": "ADEPT",
+        "name": "Adept Computer Support Ltd",
+        "sheet_identifier": "adept",
+        "validation_markers": [
+            "Adept Computer Support Ltd",
+            "Invoice"
+        ],
+        "exclusion_markers": [
+            "REMITTANCE",
+            "Statement"
+        ],
+        "patterns": {
+            "invoice_number": "\\b(\\d{5})\\b(?=\\s*\\d{2}/\\d{2}/\\d{4})",
+            "invoice_date": "\\b(\\d{2}/\\d{2}/\\d{4})\\b",
+            "reference_number": "Serial:\\s*(ITACS\\d{4})",
+            "pre_vat_total": "Sub Total\\s*(\\d+\\.\\d{2})",
+            "total_amount": "Invoice Total\\s*(\\d+\\.\\d{2})"
+        },
+        "high_confidence_threshold": 95.0,
+        "review_confidence_threshold": 75.0,
+        "last_run_date": "",
+        "total_processed": 0,
+        "success_rate": 0.0
+    },
+    "ASH_WASTE": {
+        "code": "ASH_WASTE",
+        "name": "ASH Waste Services Ltd",
+        "sheet_identifier": "ash waste",
+        "validation_markers": [
+            "ASH Waste Services Ltd"
+        ],
+        "exclusion_markers": [
+            "REMITTANCE",
+            "Statement"
+        ],
+        "patterns": {
+            "invoice_number": "INV(\\d+)_\\d+\\.pdf",
+            "invoice_date": "\\b(\\d{2}/\\d{2}/\\d{4})\\b",
+            "reference_number": "INV\\d+_(\\d+)\\.pdf",
+            "pre_vat_total": "VAT\\s*\u00a3(\\d+\\.\\d{2})",
+            "total_amount": "\u00a3\\d+\\.\\d{2}\\s*\u00a3\\d+\\.\\d{2}\\s*\u00a3(\\d+\\.\\d{2})"
+        },
+        "high_confidence_threshold": 95.0,
+        "review_confidence_threshold": 75.0,
+        "last_run_date": "",
+        "total_processed": 0,
+        "success_rate": 0.0
+    },
+    "ALLIANCE": {
+        "code": "ALLIANCE",
+        "name": "Alliance Healthcare (Distribution) Ltd",
+        "sheet_identifier": "alliance",
+        "validation_markers": [
+            "Alliance Healthcare",
+            "STATEMENT"
+        ],
+        "exclusion_markers": [
+            "NO OUTSTANDING ITEMS",
+            "SUPPRESS"
+        ],
+        "patterns": {
+            "invoice_number": "(\\d+)_([A-Z0-9]+)_(\\d{2}-\\d{2}-\\d{4})\\.pdf",
+            "invoice_date": "(\\d{2}APR\\d{2})\\s+1",
+            "reference_number": "(\\d+)_[A-Z0-9]+_\\d{2}-\\d{2}-\\d{4}\\.pdf",
+            "pre_vat_total": "PAGE TOTAL\\s+(\\d+\\.\\d{2})",
+            "total_amount": "INVOICE TOTAL\\s+(\\d+\\.\\d{2})"
+        },
+        "high_confidence_threshold": 95.0,
+        "review_confidence_threshold": 75.0,
+        "last_run_date": "",
+        "total_processed": 0,
+        "success_rate": 0.0
+    },
+    "VALLEY": {
+        "code": "VALLEY",
+        "name": "Valley Northern",
+        "sheet_identifier": "valley northern",
+        "validation_markers": [
+            "Valley Northern Ltd",
+            "INVOICE FOR"
+        ],
+        "exclusion_markers": [
+            "STATEMENT",
+            "CREDIT NOTE"
+        ],
+        "patterns": {
+            "invoice_number": "Invoice\\s*Date\\s*Invoice\\s*No[\\s\\S]{0,200}?(\\d{5,7})",
+            "invoice_date": "Invoice\\s*Date\\s*Invoice\\s*No[\\s\\S]{0,100}?(\\d{2}/\\d{2}/\\d{4})",
+            "reference_number": "(?:Customer\\s*Order\\s*Number[\\s\\S]{0,200}?\\([\\s\\S]*?([\\w\\-]+)\\)|VN\\d{5})",
+            "pre_vat_total": "Sub\\s*Total[\\s\\S]{0,50}?(\\d+\\.\\d{2})",
+            "total_amount": "(?:TOTAL\\s*DUE\\s*\\(\u00a3\\)|TOTAL\\s*AMOUNT)[\\s\\S]{0,50}?(\\d+\\.\\d{2})"
+        },
+        "high_confidence_threshold": 95.0,
+        "review_confidence_threshold": 75.0,
+        "last_run_date": "2024-11-29 11:49:22",
+        "total_processed": 697,
+        "success_rate": 0.0
+    }
+}
